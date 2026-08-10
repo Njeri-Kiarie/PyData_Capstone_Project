@@ -41,7 +41,7 @@ The project will be developed in **Python using VS Code** and will demonstrate:
 * **Seaborn** — statistical visualization
 * **GeoPandas** — geographic analysis and mapping
 
-## Data set
+## Data Sources
 The primary dataset for this project is the:
 - *2024 FinAccess Household Survey — Public Dataset*
 - Central Bank of Kenya, Kenya National Bureau of Statistics, and FSD Kenya.
@@ -51,11 +51,20 @@ The provided workbook contains three main components:
 * 2024_Finaccess_Publicdata — the main survey dataset
 * Variables — variable names, labels, and descriptions
 * Values — coded response values and their corresponding labels
-
 The main dataset contains thousands of variables covering areas such as demographics, financial access, financial usage, savings, borrowing, digital financial services, and other aspects of financial behaviour.
-
-Because the dataset contains a large number of variables, only variables relevant to the research questions will be selected for analysis.
-
+Due to the large number of variables in the original dataset, relevant variables will be selected based on the research questions.
+The analysis dataset will focus on areas such as:
+* Demographics
+* County
+* Financial access
+* Financial service usage
+* Banking
+* Mobile money
+* Savings
+* Borrowing
+* Digital financial services
+* Financial exclusion
+  
 ## Methodology
 The project will use an **Exploratory Data Analysis (EDA)** approach to investigate financial inclusion in Kenya using the 2024 FinAccess Household Survey.
 
