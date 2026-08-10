@@ -52,7 +52,9 @@ The provided workbook contains three main components:
 * Variables — variable names, labels, and descriptions
 * Values — coded response values and their corresponding labels
 The main dataset contains thousands of variables covering areas such as demographics, financial access, financial usage, savings, borrowing, digital financial services, and other aspects of financial behaviour.
+
 Due to the large number of variables in the original dataset, relevant variables will be selected based on the research questions.
+
 The analysis dataset will focus on areas such as:
 * Demographics
 * County
