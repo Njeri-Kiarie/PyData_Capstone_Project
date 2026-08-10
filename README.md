@@ -43,14 +43,13 @@ The project will be developed in **Python using VS Code** and will demonstrate:
 
 ## Data Sources
 The primary dataset for this project is the:
-- *2024 FinAccess Household Survey — Public Dataset*
-- Central Bank of Kenya, Kenya National Bureau of Statistics, and FSD Kenya.
+- *2024 FinAccess Household Survey — Public Dataset*: Central Bank of Kenya, Kenya National Bureau of Statistics, and FSD Kenya
 
-The dataset contains survey responses from households and individuals across Kenya.
-The provided workbook contains three main components:
+The dataset contains survey responses from households and individuals across Kenya and contains three main workbook components:
 * 2024_Finaccess_Publicdata — the main survey dataset
 * Variables — variable names, labels, and descriptions
 * Values — coded response values and their corresponding labels
+  
 The main dataset contains thousands of variables covering areas such as demographics, financial access, financial usage, savings, borrowing, digital financial services, and other aspects of financial behaviour.
 
 Due to the large number of variables in the original dataset, relevant variables will be selected based on the research questions.
