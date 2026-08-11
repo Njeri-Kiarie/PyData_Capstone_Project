@@ -1,79 +1,116 @@
 # PyData_Capstone_Project
-# Financial Inclusion in Kenya
+
+# Bank Customer Churn Analysis
 
 ## Project Overview
 
-This project explores **financial inclusion in Kenya** using data from the 2024 FinAccess Household Survey.
+This project analyzes customer churn in a banking environment to understand why customers may leave and identify patterns that can support customer retention.
 
-The analysis will examine how Kenyans access and use financial services, including banking, mobile money, savings, credit, and digital financial services. It will also explore differences in financial inclusion across demographic groups and counties.
+Using Python and PyData libraries, the project explores customer characteristics, account information, and product usage to compare customers who stayed with those who churned.
+
+---
 
 ## Problem Statement
 
-Despite Kenya's significant progress in expanding access to financial services, some individuals and communities remain underserved or excluded from formal financial services. Differences in access and usage may exist across demographic groups and geographic regions.
+Customer churn can result in lost revenue and increased costs for banks. Understanding the characteristics and behaviors associated with churn can help banks identify customers who may be more likely to leave and develop targeted retention strategies.
 
-This project seeks to use data to understand **who is financially included, who remains excluded, and how financial service usage varies across Kenya**.
+This project aims to analyze customer data to identify patterns associated with churn and provide insights that can support better customer retention.
+
+---
 
 ## Objectives
 
-* Analyze access to and usage of financial services in Kenya.
-* Explore saving, borrowing, and digital financial behaviour.
-* Compare financial inclusion across demographic groups.
-* Identify geographic differences in financial inclusion across counties.
-* Highlight patterns of financial exclusion.
-* Generate insights relevant to banks and financial service providers.
+- Clean and prepare the customer dataset for analysis.
+- Explore customer characteristics and banking behavior.
+- Analyze patterns in customer churn.
+- Identify customer characteristics associated with higher churn.
+- Visualize key findings using clear and meaningful charts.
+- Provide recommendations based on the findings.
+
+---
 
 ## Key Questions
 
-* Which financial services are most widely used?
-* How does financial inclusion differ by age and gender?
-* How does financial inclusion vary across counties?
-* What are the main saving and borrowing patterns?
-* What role does mobile money play in financial inclusion?
-* Which groups or areas appear to be financially underserved?
+1. What proportion of customers have churned?
+2. Which customer characteristics are most associated with churn?
+3. Does the number of products a customer uses relate to churn?
+4. Does customer tenure influence churn?
+5. Are customers with higher account balances more or less likely to churn?
+6. Which customer segments have the highest churn rates?
 
-## Tools
+---
 
-The project will be developed in **Python using VS Code** and will demonstrate:
-
-* **NumPy** — numerical analysis
-* **Pandas** — data cleaning and analysis
-* **Matplotlib** — visualization
-* **Seaborn** — statistical visualization
-* **GeoPandas** — geographic analysis and mapping
-
-## Data Sources
-The primary dataset for this project is the:
-- *2024 FinAccess Household Survey — Public Dataset*: Central Bank of Kenya, Kenya National Bureau of Statistics, and FSD Kenya
-
-The dataset contains survey responses from households and individuals across Kenya and contains three main workbook components:
-* 2024_Finaccess_Publicdata — the main survey dataset
-* Variables — variable names, labels, and descriptions
-* Values — coded response values and their corresponding labels
-  
-The main dataset contains thousands of variables covering areas such as demographics, financial access, financial usage, savings, borrowing, digital financial services, and other aspects of financial behaviour.
-
-Due to the large number of variables in the original dataset, relevant variables will be selected based on the research questions.
-
-The analysis dataset will focus on areas such as:
-* Demographics
-* County
-* Financial access
-* Financial service usage
-* Banking
-* Mobile money
-* Savings
-* Borrowing
-* Digital financial services
-* Financial exclusion
-  
 ## Methodology
-The project will use an **Exploratory Data Analysis (EDA)** approach to investigate financial inclusion in Kenya using the 2024 FinAccess Household Survey.
 
-1. **Data Understanding** – Examine the dataset and data dictionary to identify variables relevant to financial inclusion, access, usage, savings, borrowing, demographics, and geography.
-2. **Data Cleaning & Preparation** – Select relevant variables, handle missing and inconsistent values, and transform the data into a format suitable for analysis.
-3. **Exploratory Analysis** – Use **Pandas and NumPy** to calculate descriptive statistics, percentages, and comparisons across demographic and geographic groups.
-4. **Data Visualization** – Use **Matplotlib and Seaborn** to visualize patterns, trends, and relationships in financial access and usage.
-5. **Geospatial Analysis** – Use **GeoPandas** to analyze and visualize differences in financial inclusion across Kenyan counties.
-6. **Insights & Recommendations** – Interpret the findings to identify patterns of financial inclusion and exclusion and develop practical insights relevant to the banking and financial services sector.
+### 1. Data Collection
 
+A banking customer dataset will be used containing customer demographic, account, and banking-related information, together with a customer churn indicator.
 
+### 2. Data Cleaning and Preparation
+
+The dataset will be inspected and prepared for analysis by:
+
+- Checking for missing values
+- Identifying and handling duplicates
+- Checking data types
+- Identifying inconsistent or invalid values
+- Selecting relevant variables for the analysis
+
+### 3. Exploratory Data Analysis
+
+Customer characteristics and banking behavior will be explored using descriptive statistics.
+
+The analysis will examine variables such as:
+
+- Customer tenure
+- Account balance
+- Number of products
+- Customer demographics
+- Other relevant customer characteristics
+
+### 4. Customer Churn Analysis
+
+Customers who churned will be compared with customers who remained with the bank.
+
+This will help identify patterns and characteristics associated with higher churn rates.
+
+### 5. Data Visualization
+
+Matplotlib and Seaborn will be used to create visualizations showing:
+
+- Overall churn rates
+- Churn across customer segments
+- Relationships between customer characteristics and churn
+- Differences between churned and retained customers
+
+### 6. Insights and Recommendations
+
+The findings will be summarized into key insights and practical recommendations that could help a bank improve customer retention.
+
+---
+
+## Tools & Libraries
+
+- Python
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+
+---
+
+## Project Structure
+
+```text
+bank-customer-churn/
+│
+├── data/
+│   └── customer_churn.csv
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_exploratory_analysis.ipynb
+│   └── 03_churn_analysis.ipynb
+│
+├── README.md
+└── requirements.txt
