@@ -37,6 +37,8 @@ This project aims to analyze customer data to identify patterns associated with 
 4. Does customer tenure influence churn?
 5. Are customers with higher account balances more or less likely to churn?
 6. Which customer segments have the highest churn rates?
+7. Does customer activity level influence the likelihood of churn?
+8. Does churn differ across countries?
 
 ---
 
@@ -44,7 +46,13 @@ This project aims to analyze customer data to identify patterns associated with 
 
 The project uses the **Churn Modelling** dataset, which contains information about bank customers and whether they exited the bank.
 
-The dataset contains **10,000 customer records** and **14 variables**.
+The dataset contains **10,000 customer records and 14 variables**.
+
+The customers in the dataset are from three countries:
+
+- France
+- Spain
+- Germany
 
 ### Data Source
 
@@ -52,12 +60,15 @@ The dataset was obtained from Kaggle:
 
 [Bank Customer Churn Dataset](https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling)
 
-### Key Variables
+### Dataset Variables
 
 | Variable | Description |
 |---|---|
+| RowNumber | Row identifier |
+| CustomerId | Unique customer identifier |
+| Surname | Customer surname |
 | CreditScore | Customer's credit score |
-| Geography | Customer's country/region |
+| Geography | Customer's country |
 | Gender | Customer's gender |
 | Age | Customer's age |
 | Tenure | Number of years the customer has been with the bank |
@@ -68,8 +79,10 @@ The dataset was obtained from Kaggle:
 | EstimatedSalary | Estimated customer salary |
 | Exited | Whether the customer left the bank |
 
-The `Exited` variable will be used as the main indicator of customer churn.
+The `Exited` variable will be used as the main indicator of customer churn:
 
+- `0` = Customer stayed with the bank
+- `1` = Customer exited the bank
 ---
 
 ## Tools & Libraries
