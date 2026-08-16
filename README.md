@@ -227,3 +227,8 @@ Matplotlib and Seaborn will be used to create visualizations showing:
 The findings will be summarized into key insights and practical recommendations that could help a bank improve customer retention.
 
 ---
+
+
+##  Live Dashboard
+
+[View the Interactive Customer Churn Dashboard](https://pydatacapstoneproject-cqekngpetzqiht7ortd5bg.streamlit.app/)
