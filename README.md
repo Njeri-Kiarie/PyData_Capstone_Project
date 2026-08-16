@@ -37,6 +37,11 @@ This project aims to analyze customer data to identify patterns associated with 
 4. Does customer tenure influence churn?
 5. Are customers with higher account balances more or less likely to churn?
 6. Which customer segments have the highest churn rates?
+<<<<<<< HEAD
+=======
+7. Does customer activity level influence the likelihood of churn?
+8. Does churn differ across countries?
+>>>>>>> fc7617883a349ebab5ee56da183287e5b6842916
 
 ---
 
@@ -44,20 +49,45 @@ This project aims to analyze customer data to identify patterns associated with 
 
 The project uses the **Churn Modelling** dataset, which contains information about bank customers and whether they exited the bank.
 
+<<<<<<< HEAD
 The dataset contains **10,000 customer records** and **14 variables**.
 
 ### Data Source
 
+=======
+The dataset contains **10,000 customer records and 14 variables**.
+
+The customers in the dataset are from three countries:
+
+- France
+- Spain
+- Germany
+
+### Data Source
+
+>>>>>>> fc7617883a349ebab5ee56da183287e5b6842916
 The dataset was obtained from Kaggle:
 
 [Bank Customer Churn Dataset](https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling)
 
+<<<<<<< HEAD
 ### Key Variables
 
 | Variable | Description |
 |---|---|
 | CreditScore | Customer's credit score |
 | Geography | Customer's country/region |
+=======
+### Dataset Variables
+
+| Variable | Description |
+|---|---|
+| RowNumber | Row identifier |
+| CustomerId | Unique customer identifier |
+| Surname | Customer surname |
+| CreditScore | Customer's credit score |
+| Geography | Customer's country |
+>>>>>>> fc7617883a349ebab5ee56da183287e5b6842916
 | Gender | Customer's gender |
 | Age | Customer's age |
 | Tenure | Number of years the customer has been with the bank |
@@ -68,8 +98,15 @@ The dataset was obtained from Kaggle:
 | EstimatedSalary | Estimated customer salary |
 | Exited | Whether the customer left the bank |
 
+<<<<<<< HEAD
 The `Exited` variable will be used as the main indicator of customer churn.
 
+=======
+The `Exited` variable will be used as the main indicator of customer churn:
+
+- `0` = Customer stayed with the bank
+- `1` = Customer exited the bank
+>>>>>>> fc7617883a349ebab5ee56da183287e5b6842916
 ---
 
 ## Tools & Libraries
@@ -85,6 +122,60 @@ The `Exited` variable will be used as the main indicator of customer churn.
 ## Methodology
 
 ### 1. Data Collection
+<<<<<<< HEAD
+=======
+
+The analysis uses the Churn Modelling dataset containing demographic, financial, and banking activity information for bank customers.
+
+### 2. Data Cleaning and Preparation
+
+The dataset will be inspected and prepared for analysis by:
+
+- Checking for missing values
+- Identifying duplicates
+- Checking data types
+- Identifying inconsistent or invalid values
+- Removing variables that are not relevant to the analysis
+- Preparing the data for exploratory analysis
+
+### 3. Exploratory Data Analysis
+
+Customer characteristics and banking behavior will be explored using descriptive statistics.
+
+The analysis will focus on variables such as:
+
+- Credit score
+- Age
+- Geography
+- Gender
+- Tenure
+- Account balance
+- Number of products
+- Credit card ownership
+- Active membership
+- Estimated salary
+
+### 4. Customer Churn Analysis
+
+Customers who churned will be compared with customers who remained with the bank.
+
+The analysis will examine how customer characteristics and banking behavior differ between the two groups.
+
+### 5. Data Visualization
+
+Matplotlib and Seaborn will be used to create visualizations showing:
+
+- Overall churn rate
+- Churn across customer segments
+- Relationship between customer characteristics and churn
+- Differences between churned and retained customers
+
+### 6. Insights and Recommendations
+
+The findings will be summarized into key insights and practical recommendations that could help a bank improve customer retention.
+
+---
+>>>>>>> fc7617883a349ebab5ee56da183287e5b6842916
 
 The analysis uses the Churn Modelling dataset containing demographic, financial, and banking activity information for bank customers.
 
