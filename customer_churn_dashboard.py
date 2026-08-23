@@ -15,6 +15,21 @@ customer_data["AgeGroup"] = pd.cut(customer_data["Age"],
     labels=["18-25", "26-35", "36-45", "46-55", "56-65", "66+"]
 )
 
+customer_data['BalanceGroup'] = pd.cut(customer_data['Balance'],
+    bins=[-1, 50000, 100000, 150000, 200000, float('inf')],
+    labels=['0–50K', '50K–100K', '100K–150K', '150K–200K', '200K+']
+)
+
+customer_data['CreditScoreGroup'] = pd.cut(customer_data['CreditScore'],
+    bins=[300, 500, 600, 700, 800, 850],
+    labels=['350–499', '500–599', '600–699', '700–799', '800–850']
+)
+
+customer_data['SalaryGroup'] = pd.cut(customer_data['EstimatedSalary'],
+    bins=[0, 50000, 100000, 150000, 200000],
+    labels=['0–50K', '50K–100K', '100K–150K', '150K–200K']
+)
+
 # ============================================================
 # DASHBOARD TITLE
 # ============================================================
