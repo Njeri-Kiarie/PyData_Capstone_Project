@@ -222,21 +222,24 @@ with menu1:
     churn_tenure = (
         filtered_data.groupby("Tenure")["Exited"].mean().mul(100).reset_index().round(2))
 
-    fig = px.line(
+    fig = px.bar(
         churn_tenure,
         x="Tenure",
         y="Exited",
-        markers=None,
+        text="Exited",
         title="Churn Rate by Tenure"
     )
 
     fig.update_traces(
-        line_color="#E63946"
-    )
-
+            marker_color="#E63946",
+            texttemplate="%{text:.1f}%",
+            textposition="outside"
+        )
+    
     fig.update_layout(
         xaxis_title="Tenure (Years)",
-        yaxis_title="Churn Rate (%)"
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 60]
     )
 
     st.plotly_chart(
