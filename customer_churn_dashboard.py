@@ -239,7 +239,7 @@ with menu1:
     fig.update_layout(
         xaxis_title="Tenure (Years)",
         yaxis_title="Churn Rate (%)",
-        yaxis_range=[0, 60]
+        yaxis_range=[0, 30]
     )
 
     st.plotly_chart(
@@ -322,6 +322,144 @@ with menu1:
         use_container_width=True
     )
 
+    # ============================================================
+    # CHURN RATE BY ACCOUNT BALANCES
+    # ============================================================
+    st.subheader("Churn Rate by Account Balance")
+    
+    churn_balance = (
+        filtered_data.groupby("BalanceGroup")["Exited"].mean().mul(100).reset_index().round(2))
+    
+    fig = px.bar(
+        churn_balance,
+        x="BalanceGroup",
+        y="Exited",
+        text="Exited",
+        title="Churn Rate by Account Balances"
+    )
+    
+    fig.update_traces(
+        marker_color="#E63946",
+        texttemplate="%{text:.1f}%",
+        textposition="outside"
+    )
+        
+    fig.update_layout(
+        xaxis_title="Balance Group",
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 60]
+    )
+    
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    # ============================================================
+    # CHURN RATE BY CREDIT CARD OWNERSHIP
+    # ============================================================
+    st.subheader("Churn Rate by Credit Card Ownership")
+    
+    churn_credit_card = (
+        filtered_data.groupby("HasCrCard")["Exited"].mean().mul(100).reset_index().round(2))
+
+    churn_credit_card["HasCrCard"] = churn_credit_card["HasCrCard"].map({
+            0: "No",
+            1: "Yes"
+        })
+    
+    fig = px.bar(
+        churn_credit_card,
+        x="HasCrCard",
+        y="Exited",
+        text="Exited",
+        title="Churn Rate by Credit Card Ownership"
+    )
+    
+    fig.update_traces(
+        marker_color="#E63946",
+        texttemplate="%{text:.1f}%",
+        textposition="outside"
+    )
+        
+    fig.update_layout(
+        xaxis_title="Credit Card",
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 25]
+    )
+    
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    # ============================================================
+    # CHURN RATE BY SALARY
+    # ============================================================
+    st.subheader("Churn Rate by Salary")
+        
+    churn_salary = (
+        filtered_data.groupby("SalaryGroup")["Exited"].mean().mul(100).reset_index().round(2))
+        
+    fig = px.bar(
+        churn_salary,
+        x="SalaryGroup",
+        y="Exited",
+        text="Exited",
+        title="Churn Rate by Estimated Salary"
+    )
+        
+    fig.update_traces(
+        marker_color="#E63946",
+        texttemplate="%{text:.1f}%",
+        textposition="outside"
+    )
+            
+    fig.update_layout(
+        xaxis_title="Estimated Salary",
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 25]
+    )
+        
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    # ============================================================
+    # CHURN RATE BY CREDIT SCORE
+    # ============================================================
+    st.subheader("Churn Rate by Credit Score")
+    
+    churn_credit_score = (
+        filtered_data.groupby("CreditScoreGroup")["Exited"].mean().mul(100).reset_index().round(2))
+    
+    fig = px.bar(
+        churn_credit_score,
+        x="CreditScoreGroup",
+        y="Exited",
+        text="Exited",
+        title="Churn Rate by Credit Score"
+    )
+    
+    fig.update_traces(
+        marker_color="#E63946",
+        texttemplate="%{text:.1f}%",
+        textposition="outside"
+    )
+        
+    fig.update_layout(
+        xaxis_title="Credit Score Group",
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 30]
+    )
+    
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+    
 with menu2:
     # ============================================================
     # SEGMENT ANALYSIS TAB
