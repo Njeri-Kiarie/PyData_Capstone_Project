@@ -40,7 +40,7 @@ st.title("📊 Bank Customer Churn Analysis Dashboard")
 # PROJECT OVERVIEW
 # ============================================================
 
-with st.expander("📖 Project Overview", expanded=True):
+with st.expander("Project Overview", expanded=True):
 
     st.markdown("""
     ### About the Project
@@ -237,7 +237,7 @@ with menu1:
     # =========================
     st.subheader("Overall Churn Distribution")
 
-    churn_counts = filtered_data["Exited"].value_counts()
+    churn_counts = (filtered_data["Exited"].value_counts().reindex([0, 1], fill_value=0))
 
     churn_counts.index = ["Stayed", "Churned"]
 
