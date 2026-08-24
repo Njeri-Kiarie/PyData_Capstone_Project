@@ -142,7 +142,7 @@ with menu1:
 
     churn_counts = customer_data["Exited"].value_counts()
 
-    churn_counts.index = ["Active", "Churned"]
+    churn_counts.index = ["Stayed", "Churned"]
 
     fig = px.pie(
         values=churn_counts.values,
