@@ -54,7 +54,7 @@ with st.expander("📖 Project Overview", expanded=True):
     customer segmentation to identify groups that may require
     greater retention attention.
      
-    ## Problem Statement
+    ### Problem Statement
 
     Customer churn can result in lost revenue and increased costs for banks. 
     Understanding the characteristics and behaviors associated with churn can 
@@ -64,7 +64,7 @@ with st.expander("📖 Project Overview", expanded=True):
     This project aims to analyze customer data to identify patterns associated with 
     churn and provide insights that can support better customer retention.
 
-    ## Key Questions
+    ### Key Questions
 
     1. What proportion of customers have churned?
     2. Which customer characteristics are most associated with churn?
@@ -74,6 +74,30 @@ with st.expander("📖 Project Overview", expanded=True):
     6. Which customer segments have the highest churn rates?
     7. Does customer activity level influence the likelihood of churn?
     8. Does churn differ across countries?
+
+    ### Dataset
+
+    The project uses the **Churn Modelling** dataset, which contains information 
+    about bank customers and whether they exited the bank.
+
+    The dataset contains **10,000 customer records** and **14 variables**.
+
+    The customers in the dataset are from three countries:
+
+    - France
+    - Spain
+    - Germany
+
+    ### Data Source
+    The dataset was obtained from Kaggle: [Bank Customer Churn Dataset](https://www.kaggle.com/datasets/shrutimechlearn/churn-modelling)
+
+    ### Key Variables
+
+    The `Exited` variable will be used as the main indicator of customer churn:
+
+    - `0` = Customer stayed with the bank
+    - `1` = Customer exited the bank
+
     """)
 
 st.markdown(
@@ -147,7 +171,7 @@ with menu1:
 
     churn_rate = (churned_customers / total_customers) * 100
 
-    active_customers = total_customers - churned_customers
+    stayed_customers = total_customers - churned_customers
 
 
     col1, col2, col3, col4 = st.columns(4)
@@ -172,13 +196,14 @@ with menu1:
 
     with col4:
         st.metric(
-            "Active Customers",
-            f"{active_customers:,}"
+            "Stayed Customers",
+            f"{stayed_customers:,}"
         )
 
     # =========================
     # CHURN DISTRIBUTION
     # =========================
+    st.subheader("Overall Churn Distribution")
 
     churn_counts = customer_data["Exited"].value_counts()
 
