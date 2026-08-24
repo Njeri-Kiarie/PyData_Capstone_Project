@@ -109,10 +109,9 @@ st.markdown(
 
 st.sidebar.header("Filters")
 
-geography = st.sidebar.multiselect(
-    "Select Geography",
-    options=sorted(customer_data["Geography"].unique()),
-    default=sorted(customer_data["Geography"].unique())
+geography = st.selectbox(
+    "Geography",
+    ["All"] + sorted(customer_data["Geography"].dropna().unique().tolist())
 )
 
 age_group = st.sidebar.multiselect(
@@ -133,10 +132,10 @@ try:
 
     filtered_data = customer_data.copy()
 
-    if geography:
+    if geography != "All":
         filtered_data = filtered_data[
-            filtered_data["Geography"].isin(geography)
-        ]
+            filtered_data["Geography"] == geography
+    ]
 
     if age_group:
         filtered_data = filtered_data[
@@ -175,6 +174,8 @@ filtered_data = customer_data[
     & (customer_data["AgeGroup"].isin(age_group))
     & (customer_data["NumOfProducts"].isin(num_products))
 ]
+
+
 # ============================================================
 # DASHBOARD MENU
 # ============================================================
