@@ -45,14 +45,12 @@ with st.expander("📖 Project Overview", expanded=True):
     st.markdown("""
     ### About the Project
 
-    This project analyzes customer churn in a banking dataset to
-    identify customer characteristics and behaviours associated
-    with a higher likelihood of leaving the bank.
+    This project analyzes customer churn in a banking environment to understand 
+    why customers may leave and identify patterns that can support customer retention.
 
-    The analysis focuses on understanding how churn varies across
-    demographic, geographic and behavioural factors, and uses
-    customer segmentation to identify groups that may require
-    greater retention attention.
+    Using Python and PyData libraries, the project explores customer characteristics, 
+    account information, and banking activity to compare customers who stayed with the 
+    bank with those who churned.
      
     ### Problem Statement
 
