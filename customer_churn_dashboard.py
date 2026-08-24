@@ -115,23 +115,17 @@ geography = st.sidebar.multiselect(
     default=sorted(customer_data["Geography"].unique())
 )
 
-filtered_customer_data = customer_data[customer_data["Geography"].isin(geography)]
-
 age_group = st.sidebar.multiselect(
     "Select Age Group",
     options=sorted(customer_data["AgeGroup"].unique()),
     default=sorted(customer_data["AgeGroup"].unique())
 )
 
-filtered_customer_data = customer_data[customer_data["AgeGroup"].isin(age_group)]
-
 num_products = st.sidebar.multiselect(
     "Number of Products",
     options=sorted(customer_data["NumOfProducts"].unique()),
     default=sorted(customer_data["NumOfProducts"].unique())
 )
-
-filtered_customer_data = customer_data[customer_data["NumOfProducts"].isin(num_products)]
 
 # ============================================================
 # FILTER DATA
@@ -142,7 +136,6 @@ filtered_data = customer_data[
     & (customer_data["AgeGroup"].isin(age_group))
     & (customer_data["NumOfProducts"].isin(num_products))
 ]
-
 # ============================================================
 # DASHBOARD MENU
 # ============================================================
@@ -163,13 +156,15 @@ with menu1:
     # KPI METRICS
     # =========================
 
-    total_customers = len(filtered_customer_data)
+    total_customers = len(filtered_data)
 
-    churned_customers = filtered_customer_data["Exited"].sum()
+    churned_customers = filtered_data["Exited"].sum()
 
-    churn_rate = (churned_customers / total_customers) * 100
+    churn_rate = filtered_data["Exited"].mean() * 100
 
-    stayed_customers = total_customers - churned_customers
+    stayed_customers = len(
+        filtered_data[filtered_data["Exited"] == 0]
+    )
 
 
     col1, col2, col3, col4 = st.columns(4)
