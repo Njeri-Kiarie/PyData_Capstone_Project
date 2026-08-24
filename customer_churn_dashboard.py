@@ -36,6 +36,24 @@ customer_data['SalaryGroup'] = pd.cut(customer_data['EstimatedSalary'],
 
 st.title("📊 Bank Customer Churn Analysis Dashboard")
 
+# ============================================================
+# PROJECT OVERVIEW
+# ============================================================
+
+with st.expander("📖 Project Overview", expanded=True):
+
+    st.markdown("""
+    ### About the Project
+
+    This project analyzes customer churn in a banking dataset to
+    identify customer characteristics and behaviours associated
+    with a higher likelihood of leaving the bank.
+
+    The analysis focuses on understanding how churn varies across
+    demographic, geographic and behavioural factors, and uses
+    customer segmentation to identify groups that may require
+    greater retention attention. """)
+
 st.markdown(
     "An interactive analysis of customer churn patterns and high-risk segments."
 )
