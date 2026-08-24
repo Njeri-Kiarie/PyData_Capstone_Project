@@ -127,6 +127,79 @@ num_products = st.sidebar.multiselect(
     default=sorted(customer_data["NumOfProducts"].unique())
 )
 
+
+# Error handling
+try:
+
+    filtered_data = customer_data.copy()
+
+    if geography:
+        filtered_data = filtered_data[
+            filtered_data["Geography"].isin(geography)
+        ]
+
+    if age_group:
+        filtered_data = filtered_data[
+            filtered_data["Age Group"].isin(age_group)
+        ]
+
+    if num_products:
+        filtered_data = filtered_data[
+            filtered_data["NumOfProducts"].isin(num_products)
+        ]
+
+    if filtered_data.empty:
+        st.warning(
+            "No customers match the selected filters. "
+            "Please adjust your filters and try again."
+        )
+
+    else:
+        total_customers = len(filtered_data)
+        
+        churned_customers = filtered_data["Exited"].sum()
+        
+        churn_rate = filtered_data["Exited"].mean() * 100
+        
+        stayed_customers = len(
+            filtered_data[filtered_data["Exited"] == 0]
+        )
+        
+        
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric(
+                "Total Customers",
+                f"{total_customers:,}"
+            )
+        
+        with col2:
+            st.metric(
+                "Churned Customers",
+                f"{churned_customers:,}"
+            )
+        
+        with col3:
+            st.metric(
+                "Churn Rate",
+                f"{churn_rate:.2f}%"
+            )
+        
+        with col4:
+            st.metric(
+                "Stayed Customers",
+                f"{stayed_customers:,}"
+            )
+        
+except KeyError as e:
+    st.error(f"Missing column in the dataset: {e}")
+
+except TypeError as e:
+    st.error(f"Invalid data type encountered: {e}")
+
+except Exception as e:
+    st.error(f"An unexpected error occurred: {e}")
+
 # ============================================================
 # FILTER DATA
 # ============================================================
