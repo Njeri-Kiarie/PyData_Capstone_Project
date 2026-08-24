@@ -52,7 +52,29 @@ with st.expander("📖 Project Overview", expanded=True):
     The analysis focuses on understanding how churn varies across
     demographic, geographic and behavioural factors, and uses
     customer segmentation to identify groups that may require
-    greater retention attention. """)
+    greater retention attention.
+     
+    ## Problem Statement
+
+    Customer churn can result in lost revenue and increased costs for banks. 
+    Understanding the characteristics and behaviors associated with churn can 
+    help banks identify customers who may be more likely to leave and develop 
+    targeted retention strategies.
+    
+    This project aims to analyze customer data to identify patterns associated with 
+    churn and provide insights that can support better customer retention.
+
+    ## Key Questions
+
+    1. What proportion of customers have churned?
+    2. Which customer characteristics are most associated with churn?
+    3. Does the number of products a customer uses relate to churn?
+    4. Does customer tenure influence churn?
+    5. Are customers with higher account balances more or less likely to churn?
+    6. Which customer segments have the highest churn rates?
+    7. Does customer activity level influence the likelihood of churn?
+    8. Does churn differ across countries?
+    """)
 
 st.markdown(
     "An interactive analysis of customer churn patterns and high-risk segments."
