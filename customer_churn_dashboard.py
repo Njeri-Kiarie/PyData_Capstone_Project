@@ -140,7 +140,7 @@ try:
 
     if age_group:
         filtered_data = filtered_data[
-            filtered_data["Age Group"].isin(age_group)
+            filtered_data["AgeGroup"].isin(age_group)
         ]
 
     if num_products:
