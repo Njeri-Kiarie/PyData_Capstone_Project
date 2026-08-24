@@ -155,41 +155,7 @@ try:
         )
 
     else:
-        total_customers = len(filtered_data)
-        
-        churned_customers = filtered_data["Exited"].sum()
-        
-        churn_rate = filtered_data["Exited"].mean() * 100
-        
-        stayed_customers = len(
-            filtered_data[filtered_data["Exited"] == 0]
-        )
-        
-        
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-            st.metric(
-                "Total Customers",
-                f"{total_customers:,}"
-            )
-        
-        with col2:
-            st.metric(
-                "Churned Customers",
-                f"{churned_customers:,}"
-            )
-        
-        with col3:
-            st.metric(
-                "Churn Rate",
-                f"{churn_rate:.2f}%"
-            )
-        
-        with col4:
-            st.metric(
-                "Stayed Customers",
-                f"{stayed_customers:,}"
-            )
+        pass
         
 except KeyError as e:
     st.error(f"Missing column in the dataset: {e}")
