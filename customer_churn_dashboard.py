@@ -198,7 +198,7 @@ with menu1:
     # =========================
     st.subheader("Overall Churn Distribution")
 
-    churn_counts = customer_data["Exited"].value_counts()
+    churn_counts = filtered_data["Exited"].value_counts()
 
     churn_counts.index = ["Stayed", "Churned"]
 
