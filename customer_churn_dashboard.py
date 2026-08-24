@@ -180,9 +180,9 @@ filtered_data = customer_data[
 # ============================================================
 
 menu1, menu2, menu3 = st.tabs([
-    "📊 Overview",
-    "🔎 Segmented Analysis",
-    "💡 Insights & Recommendations"
+    "Churn Overview",
+    "Segmented Analysis",
+    "Insights & Recommendations"
 ])
 
 
