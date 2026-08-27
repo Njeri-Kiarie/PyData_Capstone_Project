@@ -62,6 +62,15 @@ with st.expander("Project Overview", expanded=True):
     This project aims to analyze customer data to identify patterns associated with 
     churn and provide insights that can support better customer retention.
 
+    ### Objectives
+
+    - Clean and prepare the customer dataset for analysis.
+    - Explore customer characteristics and banking behavior.
+    - Analyze patterns in customer churn.
+    - Identify customer characteristics associated with higher churn.
+    - Visualize key findings using clear and meaningful charts.
+    - Provide recommendations based on the findings.
+
     ### Key Questions
 
     1. What proportion of customers have churned?
