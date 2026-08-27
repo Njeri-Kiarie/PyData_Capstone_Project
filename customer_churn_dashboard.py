@@ -361,7 +361,7 @@ with menu1:
     fig.update_layout(
         xaxis_title="Age Group",
         yaxis_title="Churn Rate (%)",
-        yaxis_range=[0, 60]
+        yaxis_range=[0, 30]
     )
 
     st.plotly_chart(
