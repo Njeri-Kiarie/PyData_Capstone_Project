@@ -303,6 +303,39 @@ with menu1:
     )
 
     # ============================================================
+    # CHURN RATE BY GENDER
+    # ============================================================
+    st.subheader("Churn Rate by Gender")
+
+    churn_gender = (
+        filtered_data.groupby('Gender')['Exited'].mean().mul(100).reset_index().round(2))
+
+    fig = px.bar(
+        churn_gender,
+        x = 'Gender',
+        y = 'Exited',
+        text = 'Exited',
+        title = "Churn Rate by Gender"
+    )
+    fig.update_traces(
+        marker_color="#E63946",
+        texttemplate="%{text:.1f}%",
+        textposition="outside"
+    )
+    
+    fig.update_layout(
+        xaxis_title="Age Group",
+        yaxis_title="Churn Rate (%)",
+        yaxis_range=[0, 60]
+    )
+    
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+   
+
+    # ============================================================
     # CHURN RATE BY AGE GROUP
     # ============================================================
 
